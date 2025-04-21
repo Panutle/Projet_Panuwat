@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        .swal-text{
+          font-size: 24px !important;
+          font-family: 'Kanit', sans-serif !important;
+        }
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+        h1 {
+            font-family: 'Kanit', sans-serif;
+        }
+        h2 {
+          font-family: 'Kanit', sans-serif;
+        }
+        h3 {
+          font-family: 'Kanit', sans-serif;
+        }
+        form {
+            font-family: 'Kanit', sans-serif;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questionnaire</title>
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <center>
+        <img src ="https://www.kmutnb.ac.th/getattachment/about/symbols/logo_kmutnb-(6).png.aspx?width=250&height=246" width= "30%">
+        <h1 class = "mt-5">แบบทดสอบความสุขของนักศึกษาคณะวิทยาศาสตร์ประยุกต์ <br/>ภาควิชาสถิติประยุกต์ ระดับปริญญาตรี <br/>มหาวิทยาลัยพระจอมเกล้าพระนครเหนือ</h1></center>
+
+      {% if result == 'คุณมีความสุขอยู่ในระดับน้อยที่สุด' %}
+        <script> 
+          var dataToShow = "{{ result }}";
+          Swal.fire({ 
+            title: '<span style="color: #ffffff;">ระดับความสุขของคุณคือ</span>',
+            text : dataToShow,
+            width: 600,
+            padding: "10px",
+            color: "#FFFFFF",
+            background: "#ffffff url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg)",
+            backdrop: `
+              rgba(0,0,200,0.5) `,
+            customClass:'swal-text'
+                });
+        </script>
+      {% elif result == 'คุณมีความสุขอยู่ในระดับน้อย' %}
+        <script> 
+          var dataToShow = "{{ result }}";
+          Swal.fire({ 
+            title: '<span style="color: #ffffff;">ระดับความสุขของคุณคือ</span>',
+            text : dataToShow,
+            width: 600,
+            padding: "10px",
+            color: "#ffffff",
+            background: "#ffffff url(https://media.tenor.com/FLMdcn0az8gAAAAd/%E0%B8%81%E0%B8%A7%E0%B8%99-%E0%B8%AE%E0%B8%B2.gif)",
+            backdrop: `
+              rgba(0,140,200,0.5) `,
+            customClass:'swal-text'
+                });
+        </script>
+      {% elif result == 'คุณมีความสุขอยู่ในระดับปานกลาง' %}
+        <script> 
+          var dataToShow = "{{ result }}";
+          Swal.fire({ 
+            title: '<span style="color: #ffffff;">ระดับความสุขของคุณคือ</span>',
+            text : dataToShow,
+            width: 600,
+            padding: "10px",
+            color: "#ffffff",
+            background: "#ffffff url(https://media.tenor.com/FLMdcn0az8gAAAAd/%E0%B8%81%E0%B8%A7%E0%B8%99-%E0%B8%AE%E0%B8%B2.gif)",
+            backdrop: `
+              rgba(155,155,155,0.5) `,
+            customClass:'swal-text'
+                });
+        </script>
+      {% elif result == 'คุณมีความสุขอยู่ในระดับมาก' %}
+        <script> 
+          var dataToShow = "{{ result }}";
+          Swal.fire({ 
+            title: '<span style="color: #ffffff;">ระดับความสุขของคุณคือ</span>',
+            text : dataToShow,
+            width: 600,
+            padding: "10px",
+            color: "#ffffff",
+            background: "#ffffff url(https://media.tenor.com/FLMdcn0az8gAAAAd/%E0%B8%81%E0%B8%A7%E0%B8%99-%E0%B8%AE%E0%B8%B2.gif)",
+            backdrop: `
+              rgba(0,200,140,0.5) `,
+            customClass:'swal-text'
+                });
+        </script>
+      {% elif result == 'คุณมีความสุขอยู่ในระดับมากที่สุด' %}
+        <script> 
+          var dataToShow = "{{ result }}";
+          Swal.fire({ 
+            title: '<span style="color: #ffffff;">ระดับความสุขของคุณคือ</span>',
+            text : dataToShow,
+            width: 600,
+            padding: "10px",
+            color: "#ffffff",
+            background: "#ffffff url(https://media.tenor.com/FLMdcn0az8gAAAAd/%E0%B8%81%E0%B8%A7%E0%B8%99-%E0%B8%AE%E0%B8%B2.gif)",
+            backdrop: `
+              rgba(0,200,0,0.5) `,
+            customClass:'swal-text'
+                });
+        </script>
+      {% endif %} 
+
+      <h2>
+        <div class="mt-3 p-3 bg-success border rounded text-light">
+          &emsp; ปัจจัยด้านการเรียน
+        </div>
+      </h2>
+      <form action="/respon" method="post">
+
+        <div class = 'mt-1 p-4 bg-success bg-opacity-10 border border-success border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-success-emphasis">
+              ท่านได้เรียนในสิ่งที่ตนเองสมัครใจ
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="111" name="1" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="111"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="112" name="1" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="112"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="113" name="1" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="113">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="114" name="1" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="114">มาก</label>
+
+            <input class = "btn-check" type="radio" id="115" name="1" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="115">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>
+        <div class = 'p-4 bg-success bg-opacity-10 border border-success border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-success-emphasis">
+              ผลการเรียนส่งผลต่อความสุขของท่าน
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="121" name="2" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="121"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="122" name="2" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="122"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="123" name="2" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="123">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="124" name="2" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="124">มาก</label>
+
+            <input class = "btn-check" type="radio" id="125" name="2" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="125">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-success bg-opacity-10 border border-success border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-success-emphasis">
+              การเรียนการสอนมีความกดดัน
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="131" name="3" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="131"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="132" name="3" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="132"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="133" name="3" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="133">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="134" name="3" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="134">มาก</label>
+
+            <input class = "btn-check" type="radio" id="135" name="3" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="135">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-success bg-opacity-10 border border-success border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-success-emphasis">        
+              ท่านคาดหวังผลการเรียนไว้สูง
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="141" name="4" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="141"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="142" name="4" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="142"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="143" name="4" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="143">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="144" name="4" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="144">มาก</label>
+
+            <input class = "btn-check" type="radio" id="145" name="4" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="145">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-success bg-opacity-10 border border-success border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-success-emphasis">
+              ผลการเรียนของท่านเป็นไปตามที่คาดหวังหรือไม่
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="151" name="5" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="151"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="152" name="5" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="152"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="153" name="5" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="153">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="154" name="5" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="154">มาก</label>
+
+            <input class = "btn-check" type="radio" id="155" name="5" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="155">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-success bg-opacity-10 border border-success border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-success-emphasis">
+              เวลาเรียนมีความสุข
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="161" name="6" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="161"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="162" name="6" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="162"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="163" name="6" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="163">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="164" name="6" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="164">มาก</label>
+
+            <input class = "btn-check" type="radio" id="165" name="6" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="165">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        
+
+      <h2>
+        <div class="p-3 bg-info border rounded text-light">
+          &emsp; ปัจจัยด้านพฤติกรรมการใช้ชีวิตร่วมกับคนอื่นในมหาวิทยาลัย 
+        </div>
+      </h2>
+
+      <form action="/respon" method="post">
+
+        <div class = 'p-4 bg-info bg-opacity-10 border border-info border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-success-emphasis">
+                คนอื่นในมหาวิทยาลัยมีความสัมพันธ์ที่ดีต่อท่าน
+              </div>
+            </legend>
+        
+            <input class = "btn-check" type="radio" id="211" name="7" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="211"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="212" name="7" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="212"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="213" name="7" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="213">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="214" name="7" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="214">มาก</label>
+
+            <input class = "btn-check" type="radio" id="215" name="7" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="215">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>
+        <div class = 'p-4 bg-info bg-opacity-10 border border-info border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-info-emphasis">
+                ท่านสื่อสารพูดคุยกับคนในมหาวิทยาลัยอยู่เสมอ
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="221" name="8" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="221"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="222" name="8" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="222"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="223" name="8" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="223">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="224" name="8" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="224">มาก</label>
+
+            <input class = "btn-check" type="radio" id="225" name="8" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="225">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-info bg-opacity-10 border border-info border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-info-emphasis">
+                เมื่อท่านมีปัญหาท่านสามารถขอความช่วยเหลือจากคนในมหาวิทยาลัยได้
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="231" name="9" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="231"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="232" name="9" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="232"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="233" name="9" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="233">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="234" name="9" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="234">มาก</label>
+
+            <input class = "btn-check" type="radio" id="235" name="9" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="235">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-info bg-opacity-10 border border-info border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-info-emphasis">        
+                ชีวิตและสังคมภายในมหาลัยวิทยาลัยตรงกับที่ท่านคาดหมายไว้
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="241" name="10" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="241"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="242" name="10" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="242"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="243" name="10" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="243">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="244" name="10" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="244">มาก</label>
+
+            <input class = "btn-check" type="radio" id="245" name="10" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="245">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-info bg-opacity-10 border border-info border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-info-emphasis">
+                ท่านเต็มใจและยินดีในการทำประโยชน์เพื่อส่วนรวม  
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="251" name="11" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="251"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="252" name="11" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="252"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="253" name="11" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="253">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="254" name="11" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="254">มาก</label>
+
+            <input class = "btn-check" type="radio" id="255" name="11" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="255">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-info bg-opacity-10 border border-info border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-info-emphasis">
+                คนในมหาวิทยาลัยมีผลต่อความสุขในมหาวิทยาลัย
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="261" name="12" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="261"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="262" name="12" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="262"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="263" name="12" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="263">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="264" name="12" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="264">มาก</label>
+
+            <input class = "btn-check" type="radio" id="265" name="12" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="265">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>
+
+
+      <h2>
+        <div class="p-3 bg-primary border rounded text-light">
+          &emsp; ปัจจัยด้านการเงิน  
+        </div>
+      </h2>
+
+      <form action="/respon" method="post">
+
+        <div class = 'p-4 bg-primary bg-opacity-10 border border-primary border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-primary-emphasis">
+                ท่านมีเงินเก็บออมในแต่ละเดือน  
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="311" name="13" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="311"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="312" name="13" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="312"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="313" name="13" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="313">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="314" name="13" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="314">มาก</label>
+
+            <input class = "btn-check" type="radio" id="315" name="13" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="315">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>
+        <div class = 'p-4 bg-primary bg-opacity-10 border border-primary border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-primary-emphasis">
+                ค่าตอบแทนที่ท่านได้รับในแต่ละเดือนเป็นอย่างไร เมื่อเปรียบเทียบกับรายจ่ายในแต่ละเดือน  
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="321" name="14" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="321"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="322" name="14" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="322"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="323" name="14" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="323">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="324" name="14" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="324">มาก</label>
+
+            <input class = "btn-check" type="radio" id="325" name="14" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="325">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-primary bg-opacity-10 border border-primary border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-primary-emphasis">
+                รายได้ต่อเดือนเพียงพอต่อค่าใช้จ่าย
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="331" name="15" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="331"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="332" name="15" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="332"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="333" name="15" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="333">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="334" name="15" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="334">มาก</label>
+
+            <input class = "btn-check" type="radio" id="335" name="15" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="335">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-primary bg-opacity-10 border border-primary border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-primary-emphasis">        
+                ท่านมีหนี้สินหรือภาระที่ต้องผ่อนชำระ
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="341" name="16" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="341"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="342" name="16" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="342"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="343" name="16" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="343">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="344" name="16" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="344">มาก</label>
+
+            <input class = "btn-check" type="radio" id="345" name="16" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="345">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-primary bg-opacity-10 border border-primary border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-primary-emphasis">
+                ท่านรู้สึกว่าการผ่อนชำระหนี้สินต่าง ๆ ในปัจจุบันเป็นภาระ  
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="351" name="17" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="351"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="352" name="17" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="352"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="353" name="17" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="353">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="354" name="17" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="354">มาก</label>
+
+            <input class = "btn-check" type="radio" id="355" name="17" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="355">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-primary bg-opacity-10 border border-primary border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-primary-emphasis">
+                ท่านผ่อนชำระหนี้ตามกำหนดเวลาทุกครั้ง  
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="361" name="18" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="361"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="362" name="18" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="362"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="363" name="18" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="363">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="364" name="18" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="364">มาก</label>
+
+            <input class = "btn-check" type="radio" id="365" name="18" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="365">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>
+
+        
+      <h2>
+        <div class="p-3 bg-warning border rounded text-light">
+          &emsp; ปัจจัยด้านจิตใจและอารมณ์   
+        </div>
+      </h2>
+
+      <form action="/respon" method="post">
+
+        <div class = 'p-4 bg-warning bg-opacity-10 border border-warning border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-warning-emphasis">
+                ท่านรู้สึกเอื้ออาทร หรือห่วงใยคนรอบข้าง  
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="411" name="19" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="411"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="412" name="19" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="412"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="413" name="19" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="413">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="414" name="19" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="414">มาก</label>
+
+            <input class = "btn-check" type="radio" id="415" name="19" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="415">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>
+        <div class = 'p-4 bg-warning  bg-opacity-10 border border-warning border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-warning-emphasis">
+                ท่านให้การช่วยเหลือแก่คนรอบข้าง  
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="421" name="20" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="421"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="422" name="20" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="422"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="423" name="20" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="423">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="424" name="20" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="424">มาก</label>
+
+            <input class = "btn-check" type="radio" id="425" name="20" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="425">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-warning bg-opacity-10 border border-warning border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-warning-emphasis">
+                ใน 1 สัปดาห์ท่านทำกิจกรรมเพื่อเป็นการพักผ่อนหย่อนใจ เช่น อ่านหนังสือ ดูหนัง ฟังเพลง ฯลฯ  
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="431" name="21" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="431"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="432" name="21" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="432"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="433" name="21" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="433">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="434" name="21" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="434">มาก</label>
+
+            <input class = "btn-check" type="radio" id="435" name="21" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="435">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+
+        <div class = 'p-4 bg-warning bg-opacity-10 border border-warning border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-warning-emphasis">        
+                ท่านมีความเครียด เช่น เครียดจากการทำงาน เรื่องครอบครัว หรือเรื่องอื่นๆ  
+              </div>
+            </legend>
+
+            <input class = "btn-check" type="radio" id="441" name="22" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="441"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="442" name="22" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="442"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="443" name="22" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="443">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="444" name="22" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="444">มาก</label>
+
+            <input class = "btn-check" type="radio" id="445" name="22" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="445">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+
+        <div class = 'p-4 bg-warning bg-opacity-10 border border-warning border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-warning-emphasis">
+                 ท่านคิดว่าชีวิตของท่านเป็นไปตามที่คาดหวัง
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="451" name="23" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="451"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="452" name="23" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="452"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="453" name="23" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="453">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="454" name="23" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="454">มาก</label>
+
+            <input class = "btn-check" type="radio" id="455" name="23" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="455">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        
+
+      <h2>
+        <div class="p-3 bg-danger border rounded text-light">
+          &emsp; ปัจจัยด้านสุขภาพ
+        </div>
+      </h2>
+
+      <form action="/respon" method="post">
+
+        <div class = 'p-4 bg-danger bg-opacity-10 border border-danger border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-danger-emphasis">
+                ปกติท่านทานอาหารตรงเวลาและครบ 3 มื้อ
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="511" name="24" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="511"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="512" name="24" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="512"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="513" name="24" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="513">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="514" name="24" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="514">มาก</label>
+
+            <input class = "btn-check" type="radio" id="515" name="24" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="515">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>
+        <div class = 'p-4 bg-danger bg-opacity-10 border border-danger border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-danger-emphasis">
+                ท่านได้รับการพักผ่อนเพียงพอ  
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="521" name="25" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="521"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="522" name="25" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="522"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="523" name="25" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="523">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="524" name="25" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="524">มาก</label>
+
+            <input class = "btn-check" type="radio" id="525" name="25" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="525">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-danger bg-opacity-10 border border-danger border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-danger-emphasis">
+                ปัจจุบันท่านออกกำลังกายอย่างสม่ำเสมอ
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="531" name="26" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="531"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="532" name="26" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="532"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="533" name="26" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="533">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="534" name="26" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="534">มาก</label>
+
+            <input class = "btn-check" type="radio" id="535" name="26" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="535">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-danger bg-opacity-10 border border-danger border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-danger-emphasis">        
+                ปัจจุบันท่านสูบบุหรี่เป็นประจำ
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="541" name="27" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="541"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="542" name="27" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="542"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="543" name="27" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="543">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="544" name="27" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="544">มาก</label>
+
+            <input class = "btn-check" type="radio" id="545" name="27" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="545">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-danger bg-opacity-10 border border-danger border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-danger-emphasis">
+                มากที่สุดท่านเสียเวลาในแต่ละวันไปกับการเล่นโทรศัพท์/คอมพิมเตอร์
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="551" name="28" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="551"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="552" name="28" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="552"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="553" name="28" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="553">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="554" name="28" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="554">มาก</label>
+
+            <input class = "btn-check" type="radio" id="555" name="28" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="555">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>  
+        <div class = 'p-4 bg-danger bg-opacity-10 border border-danger border rounded'>
+          <fieldset>
+            <center>
+            <legend>
+              <div class="text-danger-emphasis">
+                ท่านดื่มแอลกอฮอร์อย่างสม่ำเสมอ
+              </div>
+            </legend>
+            
+            <input class = "btn-check" type="radio" id="561" name="29" value="1" autocomplete="off">
+            <label class = "btn btn-outline-success " for="561"> น้อยที่สุด</label>
+
+            <input class = "btn-check" type="radio" id="562" name="29" value="2" autocomplete="off">
+            <label class = "btn btn-outline-success " for="562"> น้อย </label>
+
+            <input class = "btn-check" type="radio" id="563" name="29" value="3" autocomplete="off" checked>
+            <label class = "btn btn-outline-warning " for="563">ปานกลาง</label>
+
+            <input class = "btn-check" type="radio" id="564" name="29" value="4" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="564">มาก</label>
+
+            <input class = "btn-check" type="radio" id="565" name="29" value="5" autocomplete="off">
+            <label class = "btn btn-outline-danger " for="565">มากที่สุด</label>
+            </center>
+          </fieldset>
+        </div>
+      <br/>
+
+      <div class="mb-3 d-grid gap-2 col-6 mx-auto">
+        <button type="submit" class="btn btn-outline-dark">Sent</button>
+      </div>
+      
+      </form>
+
+      
+    </div>
+  </body>
+</html>
